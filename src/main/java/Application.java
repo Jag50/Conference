@@ -1,5 +1,4 @@
 import com.pluralsight.service.SpeakerService;
-import com.pluralsight.service.SpeakerServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -17,9 +16,20 @@ public class Application {
         //now nothing is hardcoded, it's running through the config instances
         SpeakerService service = appContext.getBean("speakerService", SpeakerService.class);
 
-        System.out.println(service.finall().get(0).getFirstName());
+        System.out.println(service);
+
+        System.out.println(service.findAll().get(0).getFirstName());
+
+
+        SpeakerService service2 = appContext.getBean("speakerService", SpeakerService.class);
+
+        System.out.println(service2);
+        //prints out two different address instances for us
+
     }
 }
+
+//TODO:Read more about Constructor injection
 
 //Setter injection is as simple as a method call
 //Setter injection is simply calling a setter injection on a bean
@@ -28,3 +38,8 @@ public class Application {
 //if this wasn't set-up this way, it would call a bean every time this was called
 
 
+//Scope's inside the application are associated with patterns, spring implements patterns
+
+//When the Spring Framework creates a bean, it associates a scope with the bean.
+// A scope defines the runtime context within which the bean instance is available.
+// In Spring, a bean can be associated with the following scopes: Singleton.
