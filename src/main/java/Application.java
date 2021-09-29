@@ -31,6 +31,16 @@ public class Application {
 
 //TODO:Read more about Constructor injection
 
+//Constructor based injection ensures that dependency is present(will fail without)
+//Can create immutable classes
+
+//TODO:Setter Injection
+//Does not insure that dependency is present
+
+//Constructor injection is used when the class cannot function without the dependant of the class.
+//Property injectino is used when the class can function without the dependent class.
+
+
 //Setter injection is as simple as a method call
 //Setter injection is simply calling a setter injection on a bean
 //call and get an instance of the bean from the spring config file
